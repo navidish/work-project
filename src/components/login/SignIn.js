@@ -46,7 +46,7 @@ export default function SignIn() {
   }
 
   return (
-    <Grid container >
+    <Grid container>
       <form role="form">
         <TextField
           autoComplete='false'

@@ -12,26 +12,30 @@ const TaskItem = (props) => {
         maxWidth: '100%',
         maxHeight: '100%',
     });
+    const checkedValue = (status) => {
 
+        if (status)
+            return "done"
+        else
+            return "doing"
+
+    }
     return (
         <Paper
             sx={{
                 p: 2,
-                margin: 'auto',
+                margin: 1,
                 maxWidth: 500,
                 backgroundColor: '#fff',
-                '&:hover': {
-                    backgroundColor: '#cccccc',
-                    opacity: [0.9, 0.8, 0.6],
-                },
             }}
         >
             <Grid container spacing={2}>
-
                 <Grid item xs={12} sm container>
                     <Grid item xs container direction="column" spacing={2}>
                         <Grid item xs>
-                            <FormControlLabel control={<Checkbox checked={props.isChecked} onChange={props.changeStatus} />} label={props.content}/>
+                            <FormControlLabel
+                                control={<Checkbox checked={props.checked} onChange={props.changeStatus}/>}
+                                label={checkedValue(props.checked)}/>
                             <Typography gutterBottom variant="subtitle1" component="p">
                                 {props.content}
                             </Typography>
@@ -41,7 +45,8 @@ const TaskItem = (props) => {
                             </Typography>
                         </Grid>
                         <Grid item>
-                            <Button  sx={{ cursor: 'pointer' }} variant="text" color='primary' onClick={props.deleteItem}>delete</Button>
+                            <Button sx={{cursor: 'pointer'}} variant="text" color='primary'
+                                    onClick={props.deleteItem}>delete</Button>
 
                         </Grid>
                     </Grid>

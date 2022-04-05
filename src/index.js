@@ -4,7 +4,8 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import TaskList from "./components/taskList/TaskList";
-import TestCArd from "./components/TestCArd";
+import EmptyList from "./components/taskList/EmptyList";
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
